@@ -73,20 +73,25 @@ ReadKey按任意鍵結束
 同時有or和and,不括號的話and會先執行
 if和else if邏輯不能互相涵蓋不能重疊,會發生錯誤
 
-4/14
+4/13
 
 row列  column直行
 C#式強型別
 Array 物件(object)
 
+4/14
+
+事件(events)發生事件才去執行
+pos機 (point of sales)
+修改按屬性中的閃電符號,程式碼斷掉舊的連到新的,改完後舊的程式碼會留著,要自己刪掉
+命名空間縮短程式碼的長度
 
 
+桌上型應用程式、手機App 設計流程
+設計UI>>命名UI>>建立事件>>coding
 
-
-
-
-
-
+加入try catch finally防止程式當掉
+tryprase試著解析
 
 
 
