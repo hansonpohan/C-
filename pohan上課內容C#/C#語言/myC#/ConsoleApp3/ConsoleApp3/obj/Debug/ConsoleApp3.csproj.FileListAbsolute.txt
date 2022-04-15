@@ -1,7 +1,0 @@
-C:\pohan上課內容C#\C#語言\ConsoleApp3\ConsoleApp3\bin\Debug\ConsoleApp3.exe.config
-C:\pohan上課內容C#\C#語言\ConsoleApp3\ConsoleApp3\bin\Debug\ConsoleApp3.exe
-C:\pohan上課內容C#\C#語言\ConsoleApp3\ConsoleApp3\bin\Debug\ConsoleApp3.pdb
-C:\pohan上課內容C#\C#語言\ConsoleApp3\ConsoleApp3\obj\Debug\ConsoleApp3.csprojAssemblyReference.cache
-C:\pohan上課內容C#\C#語言\ConsoleApp3\ConsoleApp3\obj\Debug\ConsoleApp3.csproj.CoreCompileInputs.cache
-C:\pohan上課內容C#\C#語言\ConsoleApp3\ConsoleApp3\obj\Debug\ConsoleApp3.exe
-C:\pohan上課內容C#\C#語言\ConsoleApp3\ConsoleApp3\obj\Debug\ConsoleApp3.pdb
