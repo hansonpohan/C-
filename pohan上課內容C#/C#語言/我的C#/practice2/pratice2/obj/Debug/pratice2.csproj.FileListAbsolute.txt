@@ -1,0 +1,7 @@
+C:\Users\USER\Desktop\我的C#語言\pratice2\pratice2\obj\Debug\pratice2.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\我的C#語言\pratice2\pratice2\obj\Debug\pratice2.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\我的C#語言\pratice2\pratice2\bin\Debug\pratice2.exe.config
+C:\Users\USER\Desktop\我的C#語言\pratice2\pratice2\bin\Debug\pratice2.exe
+C:\Users\USER\Desktop\我的C#語言\pratice2\pratice2\bin\Debug\pratice2.pdb
+C:\Users\USER\Desktop\我的C#語言\pratice2\pratice2\obj\Debug\pratice2.exe
+C:\Users\USER\Desktop\我的C#語言\pratice2\pratice2\obj\Debug\pratice2.pdb

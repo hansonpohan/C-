@@ -1,0 +1,16 @@
+C:\pohan上課內容C#\C#語言\practice2\practice2\obj\Debug\practice2.csprojAssemblyReference.cache
+C:\pohan上課內容C#\C#語言\practice2\practice2\obj\Debug\practice2.csproj.CoreCompileInputs.cache
+C:\pohan上課內容C#\C#語言\myC#\practice2\practice2\bin\Debug\practice2.exe.config
+C:\pohan上課內容C#\C#語言\myC#\practice2\practice2\bin\Debug\practice2.exe
+C:\pohan上課內容C#\C#語言\myC#\practice2\practice2\bin\Debug\practice2.pdb
+C:\pohan上課內容C#\C#語言\myC#\practice2\practice2\obj\Debug\practice2.csprojAssemblyReference.cache
+C:\pohan上課內容C#\C#語言\myC#\practice2\practice2\obj\Debug\practice2.csproj.CoreCompileInputs.cache
+C:\pohan上課內容C#\C#語言\myC#\practice2\practice2\obj\Debug\practice2.exe
+C:\pohan上課內容C#\C#語言\myC#\practice2\practice2\obj\Debug\practice2.pdb
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\myC#\practice2\practice2\bin\Debug\practice2.exe.config
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\myC#\practice2\practice2\bin\Debug\practice2.exe
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\myC#\practice2\practice2\bin\Debug\practice2.pdb
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\myC#\practice2\practice2\obj\Debug\practice2.csprojAssemblyReference.cache
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\myC#\practice2\practice2\obj\Debug\practice2.csproj.CoreCompileInputs.cache
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\myC#\practice2\practice2\obj\Debug\practice2.exe
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\myC#\practice2\practice2\obj\Debug\practice2.pdb
