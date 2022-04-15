@@ -62,10 +62,13 @@ namespace WindowsFormsApp2
         {//回家練習
             if (txt英吋.Text != "")
             {
-                float myInch = 0.0f;
-                float myCm = 0.0f;
-                bool isRight = false;
-
+                double myInch = 0.0f;
+                double myCm = 0.0f;
+                //bool isRight = false;
+                string stringInput = txt英吋.Text;
+                myInch = Convert.ToDouble(stringInput);
+                myCm = myInch / 0.3937;
+                txt公分.Text = string.Format("{0:F2}", myCm);
             }
             else
             {
@@ -106,8 +109,21 @@ namespace WindowsFormsApp2
         }
 
         private void btn平方公尺轉坪數_Click(object sender, EventArgs e)
-        {
-            //回家練習
+        {//回家練習            
+            if (txt平方公尺.Text != "")
+            {
+                double my平方公尺 = 0.0f;
+                double my坪數 = 0.0f;
+                //bool isRight = false;
+                string stringInput = txt平方公尺.Text;
+                my平方公尺 = Convert.ToDouble(stringInput);
+                my坪數 = my平方公尺 / 3.3058;
+                txt坪數.Text = string.Format("{0:F2}", my坪數);
+            }
+            else
+            {
+                MessageBox.Show("請輸入英吋數值");
+            }
         }
 
         private void btn公斤轉磅_Click(object sender, EventArgs e)
@@ -147,8 +163,21 @@ namespace WindowsFormsApp2
         }
 
         private void btn磅轉公斤_Click(object sender, EventArgs e)
-        {
-            //回家練習
+        {//回家練習
+            if (txt磅.Text != "")
+            {
+                double my磅 = 0.0f;
+                double my公斤 = 0.0f;
+                //bool isRight = false;
+                string stringInput = txt磅.Text;
+                my磅 = Convert.ToDouble(stringInput);
+                my公斤 = my磅 / 2.2;
+                txt公斤.Text = string.Format("{0:F2}", my公斤);
+            }
+            else
+            {
+                MessageBox.Show("請輸入英吋數值");
+            }
         }
     }
 }

@@ -19,3 +19,10 @@ C:\Users\iii\Desktop\pohan上課內容C#\C#語言\myC#\practice1\practice1\obj\D
 C:\Users\iii\Desktop\pohan上課內容C#\C#語言\myC#\practice1\practice1\obj\Debug\practice1.csproj.CoreCompileInputs.cache
 C:\Users\iii\Desktop\pohan上課內容C#\C#語言\myC#\practice1\practice1\obj\Debug\practice1.exe
 C:\Users\iii\Desktop\pohan上課內容C#\C#語言\myC#\practice1\practice1\obj\Debug\practice1.pdb
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\practice1練習\practice1\bin\Debug\practice1.exe.config
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\practice1練習\practice1\bin\Debug\practice1.exe
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\practice1練習\practice1\bin\Debug\practice1.pdb
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\practice1練習\practice1\obj\Debug\practice1.csprojAssemblyReference.cache
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\practice1練習\practice1\obj\Debug\practice1.csproj.CoreCompileInputs.cache
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\practice1練習\practice1\obj\Debug\practice1.exe
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\practice1練習\practice1\obj\Debug\practice1.pdb
