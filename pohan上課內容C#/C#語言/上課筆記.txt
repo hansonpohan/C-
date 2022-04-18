@@ -93,6 +93,43 @@ pos機 (point of sales)
 加入try catch finally防止程式當掉
 tryprase試著解析
 
+4/18
+
+方法的層級在類別裡
+動態有new代表實體化執行須跟cpu請求配置記憶體
+
+靜態不須實體化:
+1.執行速度快不用配置記憶體
+2.為了系統的安全避免駭客
+
+reference參考
+基本資料可以加ref
+
+Value obj 值物件
+CBV
+int,double,float,char,string,long,enum
+Rwference obj 參考物件
+CBR
+array,dictionary,hastable,list,arraylist,button,label,textbox
+CBV---ref----CBR
+out允許回傳null
+ref不允許null
+out跟ref功用一樣
+同名異式--多載
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -135,7 +135,7 @@ namespace WindowsFormsApp2
                 bool isRight = false;
                 
                 //tryprase試著解析
-                isRight = System.Double.TryParse(txt公斤.Text, out mykg);
+                isRight = System.Double.TryParse(txt公斤.Text, out mykg);//out=ref
 
                 if (isRight == true)
                 {
