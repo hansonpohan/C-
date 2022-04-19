@@ -132,7 +132,7 @@ namespace practice1
 
             //輸入層數印出輸入層數之三角形
 
-            Console.WriteLine("請輸入層數");
+            /*Console.WriteLine("請輸入層數");
             string aa = Console.ReadLine();
             int z = Convert.ToInt32(aa);
             
@@ -147,12 +147,23 @@ namespace practice1
                     Console.Write("*");
                 }
                 Console.WriteLine();
-            }
+            }*/
             Console.WriteLine("-------------------------------------");
 
+            int[] array = new int[5];
 
+            array[0] = 5;
+            array[1] = 6;
+            array[2] = 7;
+            array[3] = 8;
+            array[4] = 9;
 
-
+            int total = 0;
+            foreach(int a in array)
+            {                
+                total += a;                 
+            }
+            Console.WriteLine(total);
 
 
 

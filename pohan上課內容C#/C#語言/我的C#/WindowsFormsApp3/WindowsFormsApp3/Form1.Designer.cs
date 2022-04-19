@@ -64,7 +64,7 @@ namespace WindowsFormsApp3
             this.btn回傳值得方法.Name = "btn回傳值得方法";
             this.btn回傳值得方法.Size = new System.Drawing.Size(309, 58);
             this.btn回傳值得方法.TabIndex = 2;
-            this.btn回傳值得方法.Text = "回傳值得方法";
+            this.btn回傳值得方法.Text = "回傳值的方法";
             this.btn回傳值得方法.UseVisualStyleBackColor = true;
             this.btn回傳值得方法.Click += new System.EventHandler(this.btn回傳值得方法_Click);
             // 

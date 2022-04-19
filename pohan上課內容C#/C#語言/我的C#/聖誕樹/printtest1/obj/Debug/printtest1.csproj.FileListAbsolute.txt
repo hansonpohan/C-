@@ -26,3 +26,10 @@ C:\Users\iii\Desktop\printtest1\printtest1\obj\Debug\printtest1.pdb
 C:\Users\iii\Desktop\printtest1\printtest1\bin\Debug\printtest1.exe.config
 C:\Users\iii\Desktop\printtest1\printtest1\bin\Debug\printtest1.exe
 C:\Users\iii\Desktop\printtest1\printtest1\bin\Debug\printtest1.pdb
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\聖誕樹\printtest1\bin\Debug\printtest1.exe.config
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\聖誕樹\printtest1\bin\Debug\printtest1.exe
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\聖誕樹\printtest1\bin\Debug\printtest1.pdb
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\聖誕樹\printtest1\obj\Debug\printtest1.csprojAssemblyReference.cache
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\聖誕樹\printtest1\obj\Debug\printtest1.csproj.CoreCompileInputs.cache
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\聖誕樹\printtest1\obj\Debug\printtest1.exe
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\聖誕樹\printtest1\obj\Debug\printtest1.pdb

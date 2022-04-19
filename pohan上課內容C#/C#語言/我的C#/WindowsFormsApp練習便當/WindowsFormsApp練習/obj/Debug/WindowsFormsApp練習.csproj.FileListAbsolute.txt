@@ -1,0 +1,10 @@
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\WindowsFormsApp練習\WindowsFormsApp練習\bin\Debug\WindowsFormsApp練習.exe.config
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\WindowsFormsApp練習\WindowsFormsApp練習\bin\Debug\WindowsFormsApp練習.exe
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\WindowsFormsApp練習\WindowsFormsApp練習\bin\Debug\WindowsFormsApp練習.pdb
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\WindowsFormsApp練習\WindowsFormsApp練習\obj\Debug\WindowsFormsApp練習.csprojAssemblyReference.cache
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\WindowsFormsApp練習\WindowsFormsApp練習\obj\Debug\WindowsFormsApp練習.Form1.resources
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\WindowsFormsApp練習\WindowsFormsApp練習\obj\Debug\WindowsFormsApp練習.Properties.Resources.resources
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\WindowsFormsApp練習\WindowsFormsApp練習\obj\Debug\WindowsFormsApp練習.csproj.GenerateResource.cache
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\WindowsFormsApp練習\WindowsFormsApp練習\obj\Debug\WindowsFormsApp練習.csproj.CoreCompileInputs.cache
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\WindowsFormsApp練習\WindowsFormsApp練習\obj\Debug\WindowsFormsApp練習.exe
+C:\Users\iii\Desktop\pohan上課內容C#\C#語言\我的C#\WindowsFormsApp練習\WindowsFormsApp練習\obj\Debug\WindowsFormsApp練習.pdb
