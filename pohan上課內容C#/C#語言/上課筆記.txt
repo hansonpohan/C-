@@ -117,6 +117,21 @@ ref不允許null
 out跟ref功用一樣
 同名異式--多載
 
+4/20
+
+
+集合collections
+1.array:
+2.list:宣告物件類型固定,可動態增減長度,位置相差遠,速度比array慢
+3.array list:宣告物件類型不固定,可混合不同類型,可動態增減長度
+4.dictionary:key-value資料型態需定義且不能改變
+5.hashtable:key-value資料型態不需定義且可以改變
+
+array沒辦法清除內容 list可以
+dictionary,hashtable都是key-value的集合物件
+dictionary有順序
+hashtable儲存順序不同
+
 
 
 
