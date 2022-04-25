@@ -77,6 +77,7 @@ namespace WindowsFormsApp5
             this.label3.Location = new System.Drawing.Point(448, 235);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
+            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label3.Size = new System.Drawing.Size(109, 30);
             this.label3.TabIndex = 2;
             this.label3.Text = "成績總和";
@@ -123,7 +124,7 @@ namespace WindowsFormsApp5
             // 
             this.btn姓名排序.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn姓名排序.Location = new System.Drawing.Point(37, 423);
-            this.btn姓名排序.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn姓名排序.Margin = new System.Windows.Forms.Padding(2);
             this.btn姓名排序.Name = "btn姓名排序";
             this.btn姓名排序.Size = new System.Drawing.Size(155, 50);
             this.btn姓名排序.TabIndex = 6;
@@ -135,7 +136,7 @@ namespace WindowsFormsApp5
             // 
             this.btn成績排序.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn成績排序.Location = new System.Drawing.Point(211, 423);
-            this.btn成績排序.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn成績排序.Margin = new System.Windows.Forms.Padding(2);
             this.btn成績排序.Name = "btn成績排序";
             this.btn成績排序.Size = new System.Drawing.Size(155, 50);
             this.btn成績排序.TabIndex = 7;
@@ -147,7 +148,7 @@ namespace WindowsFormsApp5
             // 
             this.btn列出所有學生.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn列出所有學生.Location = new System.Drawing.Point(37, 490);
-            this.btn列出所有學生.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn列出所有學生.Margin = new System.Windows.Forms.Padding(2);
             this.btn列出所有學生.Name = "btn列出所有學生";
             this.btn列出所有學生.Size = new System.Drawing.Size(212, 50);
             this.btn列出所有學生.TabIndex = 8;
@@ -162,9 +163,9 @@ namespace WindowsFormsApp5
             this.groupBox1.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(408, 423);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(202, 130);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
@@ -175,7 +176,7 @@ namespace WindowsFormsApp5
             this.btn姓名搜尋.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn姓名搜尋.ForeColor = System.Drawing.Color.Black;
             this.btn姓名搜尋.Location = new System.Drawing.Point(34, 73);
-            this.btn姓名搜尋.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn姓名搜尋.Margin = new System.Windows.Forms.Padding(2);
             this.btn姓名搜尋.Name = "btn姓名搜尋";
             this.btn姓名搜尋.Size = new System.Drawing.Size(136, 42);
             this.btn姓名搜尋.TabIndex = 1;
@@ -186,7 +187,7 @@ namespace WindowsFormsApp5
             // txt輸入姓名
             // 
             this.txt輸入姓名.Location = new System.Drawing.Point(24, 34);
-            this.txt輸入姓名.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt輸入姓名.Margin = new System.Windows.Forms.Padding(2);
             this.txt輸入姓名.Name = "txt輸入姓名";
             this.txt輸入姓名.Size = new System.Drawing.Size(158, 36);
             this.txt輸入姓名.TabIndex = 0;
@@ -207,7 +208,7 @@ namespace WindowsFormsApp5
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl資料結果);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Array的進階應用";
             this.Load += new System.EventHandler(this.Form1_Load);

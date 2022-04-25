@@ -313,7 +313,7 @@ namespace WindowsFormsApp6
             string strFive = strOne.Replace("World", "Earth");
             Console.WriteLine(strFive);
 
-            //Substring 截取字串15後2個索引值
+            //Substring 截取字串15後2個索引值(包含15)
             string strSix = strOne.Substring(15, 2);
             Console.WriteLine(strSix);
 
