@@ -97,10 +97,12 @@ namespace 威力彩
             randomarray1[4] = txt自行號碼5.Text;
             randomarray1[5] = txt自行號碼6.Text;
             
-            randomarray2[0] = txt自行特別號碼1.Text;
+            randomarray2[0] = txt自行特別號碼1.Text;            
 
             if (txt自行號碼1.Text.Length > 0 || txt自行號碼2.Text.Length > 0 || txt自行號碼3.Text.Length > 0 || txt自行號碼4.Text.Length > 0 || txt自行號碼5.Text.Length > 0 || txt自行號碼6.Text.Length > 0)
             {
+                
+                //取兩陣列交集
                 var samearr = arraytemp.Intersect(randomarray1).ToArray();
                 bool a = samearr.Length == 6;
                 bool b = samearr.Length == 5;
@@ -151,7 +153,7 @@ namespace 威力彩
                 }
                 else
                 {
-                    stra += "沒中獎";
+                    stra += "抱歉沒中獎";
                 }
                 lbl是否中獎.Text = stra;                
             }
