@@ -1,0 +1,98 @@
+4/21
+
+2017 Dev.express
+log日誌
+mdf main data file
+ldf log data file
+DB內容資料夾要允許
+server-IDE
+GUI圖像式的人機介面
+wan 外部網路
+Schema 群體 拿來授權用的 讓特定的人看到
+stroke按筆畫
+
+資料庫正規化(Database normalization)
+1.一格(每一列每一欄)只能有一筆資料
+每筆資料都有一個唯一的主鍵作為識別
+2.消除部分相依
+3.消除遞移相依
+
+go 以上代表一個區塊
+@當下跑會存在,之後就不見了
+
+SELECT 1.查詢 2.列印 3.拷貝
+
+4/22
+
+一個資料表只能有 "一個主索引鍵的條件約束"但可以用兩個條件組合一把PRIMARY KEY
+4-1 : PRIMARY KEY 條件約束[unique唯一, no null]
+4-2 : FOREIGN KEY 條件約束[no unique不唯一, null]
+4-3 : UNIQUE 條件約束[unique, one null]
+
+PRIMARY KEY FOREIGN KEY建議資料型態跟名稱一樣
+資料有連動,殺掉PKkey其他FKkey也會被殺掉
+*代表所有全部
+
+curd
+creat
+update
+read
+delete
+
+csv 逗號分開文字檔案
+as 別稱
+
+delete 10% 會無條件進位
+DELETE 速度慢 識別欄位編號不會歸 0
+TRUNCATE 速度快 識別欄位編號會歸0
+ORDER BY 排序
+ORDER BY asc 小到大
+ORDER BY dsc 大到小
+
+distinct 會抓到 null
+
+4/25
+
+select 用逗點隔開代表各個欄位的名稱
+
+4/26
+
+資料庫最小單位8K
+delete 把裝潢拆掉
+drop 把房子整個拆掉
+卸離 資料還會存在減少 ram的記憶體
+
+利用#中繼資料來做出比較資料圖,做完後中繼資料關掉就會不見
+#table
+@table 暫時的
+
+join 橫向的連結
+union 直向的連結
+
+view 可以授權部分 table 內容
+
+4/27
+
+Heap 堆  按照先後順序  寫資料快讀資料慢
+Clustered 叢集  會自動排序從A到Z  寫資料慢讀資料快
+PK key通常是 Clustered
+
+NOnclustered = Heap
+
+一個 begin 對一個 commit 完才會落地 會成對 
+遇到 rollback 會跳開還沒洛地(還在飄的)的會讀不到
+@@TRANCOUNT : 取得目前連線執行 BEGIN TRAN 敘述的交易個數，
+當執行 COMMIT TRAN 會遞減1，當執行 ROLLBACK TRAN 會歸 0
+有一件正在飄會被抓著不放無法讀取:隔離性
+
+4/28
+
+引數在 main 裡  參數對應引數
+引數代表當您呼叫程式時，您傳遞給程式參數的值。 呼叫程式碼會在呼叫程式時提供引數。
+a.max()方法
+max(a)函數
+
+
+
+
+
