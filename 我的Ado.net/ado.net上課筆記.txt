@@ -1,0 +1,50 @@
+5/10
+
+前端:終端,應用程式,client,windows form,console app
+後端:server,SQL server DB
+2-tiers架構
+連接前後端方式
+Ram Access:前後端在同一台主機
+LAN:local area network
+WAN:wide area network
+VPN:virtaul private network
+
+手機app,物聯網需要用 3-tiers
+前端:web/www browser,ios/andorid app,iot clinet wifi,smawrt car 5G,windows form
+中間層:middleware,application server,IIs server/ASP.NET,tomcat/java,php
+後端:server,SQL server DB,資料庫
+visual studio 一定要有primary key
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
