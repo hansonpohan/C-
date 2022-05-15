@@ -18,3 +18,13 @@ C:\Users\iii\Desktop\我的Ado.net\WindowsFormsApp2連接SQL Server\WindowsForms
 C:\Users\iii\Desktop\我的Ado.net\WindowsFormsApp2連接SQL Server\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
 C:\Users\iii\Desktop\我的Ado.net\WindowsFormsApp2連接SQL Server\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 C:\Users\iii\Desktop\我的Ado.net\WindowsFormsApp2連接SQL Server\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+C:\Users\User\Desktop\我的Ado.net\WindowsFormsApp2連接SQL Server\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+C:\Users\User\Desktop\我的Ado.net\WindowsFormsApp2連接SQL Server\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+C:\Users\User\Desktop\我的Ado.net\WindowsFormsApp2連接SQL Server\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+C:\Users\User\Desktop\我的Ado.net\WindowsFormsApp2連接SQL Server\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\我的Ado.net\WindowsFormsApp2連接SQL Server\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
+C:\Users\User\Desktop\我的Ado.net\WindowsFormsApp2連接SQL Server\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+C:\Users\User\Desktop\我的Ado.net\WindowsFormsApp2連接SQL Server\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.cache
+C:\Users\User\Desktop\我的Ado.net\WindowsFormsApp2連接SQL Server\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\我的Ado.net\WindowsFormsApp2連接SQL Server\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+C:\Users\User\Desktop\我的Ado.net\WindowsFormsApp2連接SQL Server\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb

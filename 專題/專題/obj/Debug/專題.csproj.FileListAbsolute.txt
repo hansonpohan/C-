@@ -1,0 +1,16 @@
+C:\Users\User\Desktop\專題\專題\bin\Debug\專題.exe.config
+C:\Users\User\Desktop\專題\專題\bin\Debug\專題.exe
+C:\Users\User\Desktop\專題\專題\bin\Debug\專題.pdb
+C:\Users\User\Desktop\專題\專題\obj\Debug\專題.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\專題\專題\obj\Debug\專題.Form1.resources
+C:\Users\User\Desktop\專題\專題\obj\Debug\專題.Forms.登入系統.resources
+C:\Users\User\Desktop\專題\專題\obj\Debug\專題.Properties.Resources.resources
+C:\Users\User\Desktop\專題\專題\obj\Debug\專題.csproj.GenerateResource.cache
+C:\Users\User\Desktop\專題\專題\obj\Debug\專題.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\專題\專題\obj\Debug\專題.exe
+C:\Users\User\Desktop\專題\專題\obj\Debug\專題.pdb
+C:\Users\User\Desktop\專題\專題\obj\Debug\專題.Forms.註冊帳號.resources
+C:\Users\User\Desktop\專題\專題\obj\Debug\專題.Forms.結帳單.resources
+C:\Users\User\Desktop\專題\專題\obj\Debug\專題.Form2.resources
+C:\Users\User\Desktop\專題\專題\obj\Debug\專題.Forms.目錄.resources
+C:\Users\User\Desktop\專題\專題\obj\Debug\專題.Forms.會員功能.resources

@@ -30,6 +30,17 @@ namespace WindowsFormsApp3
             // TODO: 這行程式碼會將資料載入 'mydbDataSet.persons' 資料表。您可以視需要進行移動或移除。
             this.personsTableAdapter.Fill(this.mydbDataSet.persons);
 
+            cboxFind欄位.Items.Add("姓名");
+            cboxFind欄位.Items.Add("電話");
+            cboxFind欄位.Items.Add("地址");
+            cboxFind欄位.Items.Add("email");
+            cboxFind欄位.SelectedIndex = 0;
+
+            cboxFilter欄位.Items.Add("姓名");
+            cboxFilter欄位.Items.Add("電話");
+            cboxFilter欄位.Items.Add("地址");
+            cboxFilter欄位.Items.Add("email");
+            cboxFilter欄位.SelectedIndex = 0;
 
             顯示第幾筆共幾筆資料();
         }
@@ -148,6 +159,55 @@ namespace WindowsFormsApp3
             {
                 // no
             }
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            //Find精確搜尋
+            if (txtFind搜尋關鍵字.Text != "")
+            {
+                string strSearch = txtFind搜尋關鍵字.Text;
+                string str欄位名稱 = cboxFind欄位.SelectedItem.ToString();
+                int idxFind = personsBindingSource.Find(str欄位名稱, strSearch);//Find有兩個參數,結果會得到一筆資料,若有多筆只會顯示第一筆
+
+                if (idxFind >= 0)
+                {
+                    personsBindingSource.Position = idxFind;
+                }
+                else
+                {
+                    //找不到 索引值為-1
+                    MessageBox.Show("找不到資料");
+                }
+            }
+            else
+            {
+                MessageBox.Show("請輸入Find關鍵字搜尋");
+            }
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            //Filter模糊搜尋
+            if (txtFilter搜尋關鍵字.Text != "")
+            {
+                string strFilter = txtFilter搜尋關鍵字.Text;
+                string str欄位名稱 = cboxFilter欄位.SelectedItem.ToString();
+                //用SQL語法改寫  select * from persons where 姓名 Like '%小%';  -- %代表任意字元或空字元
+                personsBindingSource.Filter = str欄位名稱 + " Like" + "'%" + strFilter + "%'";
+            }
+            else
+            {
+                MessageBox.Show("請輸入Filter搜尋關鍵字");
+            }
+
+        }
+
+        private void btn移除Filter條件_Click(object sender, EventArgs e)
+        {
+            personsBindingSource.RemoveFilter();
+            txtFilter搜尋關鍵字.Clear();
+            MessageBox.Show("Filter條件已移除");
         }
     }
 }

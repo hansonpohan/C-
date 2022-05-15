@@ -36,17 +36,17 @@ namespace WindowsFormsApp3
             this.personsTableAdapter = new WindowsFormsApp3.mydbDataSetTableAdapters.personsTableAdapter();
             this.tableAdapterManager = new WindowsFormsApp3.mydbDataSetTableAdapters.TableAdapterManager();
             this.personsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.personsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.personsDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,15 +81,26 @@ namespace WindowsFormsApp3
             this.btn回復資料 = new System.Windows.Forms.Button();
             this.btn儲存修改 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn新增資料_新增 = new System.Windows.Forms.Button();
             this.btn新增資料_儲存 = new System.Windows.Forms.Button();
+            this.btn新增資料_新增 = new System.Windows.Forms.Button();
             this.lbl第X筆共X筆 = new System.Windows.Forms.Label();
+            this.lbox姓名 = new System.Windows.Forms.ListBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.搜尋功能 = new System.Windows.Forms.GroupBox();
+            this.txtFind搜尋關鍵字 = new System.Windows.Forms.TextBox();
+            this.txtFilter搜尋關鍵字 = new System.Windows.Forms.TextBox();
+            this.cboxFind欄位 = new System.Windows.Forms.ComboBox();
+            this.cboxFilter欄位 = new System.Windows.Forms.ComboBox();
+            this.btnFind = new System.Windows.Forms.Button();
+            this.btnFilter = new System.Windows.Forms.Button();
+            this.btn移除Filter條件 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mydbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personsBindingNavigator)).BeginInit();
             this.personsBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personsDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.搜尋功能.SuspendLayout();
             this.SuspendLayout();
             // 
             // mydbDataSet
@@ -138,9 +149,32 @@ namespace WindowsFormsApp3
             this.personsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.personsBindingNavigator.Name = "personsBindingNavigator";
             this.personsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.personsBindingNavigator.Size = new System.Drawing.Size(781, 25);
+            this.personsBindingNavigator.Size = new System.Drawing.Size(966, 25);
             this.personsBindingNavigator.TabIndex = 0;
             this.personsBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(75, 22);
+            this.bindingNavigatorAddNewItem.Text = "新增資料";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(27, 22);
+            this.bindingNavigatorCountItem.Text = "/{0}";
+            this.bindingNavigatorCountItem.ToolTipText = "項目總數";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(75, 22);
+            this.bindingNavigatorDeleteItem.Text = "刪除資料";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -175,16 +209,9 @@ namespace WindowsFormsApp3
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "目前的位置";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(27, 22);
-            this.bindingNavigatorCountItem.Text = "/{0}";
-            this.bindingNavigatorCountItem.ToolTipText = "項目總數";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -207,24 +234,8 @@ namespace WindowsFormsApp3
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(75, 22);
-            this.bindingNavigatorAddNewItem.Text = "新增資料";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(75, 22);
-            this.bindingNavigatorDeleteItem.Text = "刪除資料";
             // 
             // personsBindingNavigatorSaveItem
             // 
@@ -248,10 +259,10 @@ namespace WindowsFormsApp3
             this.dataGridViewCheckBoxColumn1,
             this.dataGridViewTextBoxColumn7});
             this.personsDataGridView.DataSource = this.personsBindingSource;
-            this.personsDataGridView.Location = new System.Drawing.Point(587, 28);
+            this.personsDataGridView.Location = new System.Drawing.Point(853, 28);
             this.personsDataGridView.Name = "personsDataGridView";
             this.personsDataGridView.RowTemplate.Height = 24;
-            this.personsDataGridView.Size = new System.Drawing.Size(117, 64);
+            this.personsDataGridView.Size = new System.Drawing.Size(77, 107);
             this.personsDataGridView.TabIndex = 1;
             this.personsDataGridView.Visible = false;
             // 
@@ -552,16 +563,6 @@ namespace WindowsFormsApp3
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "新增資料";
             // 
-            // btn新增資料_新增
-            // 
-            this.btn新增資料_新增.Location = new System.Drawing.Point(18, 29);
-            this.btn新增資料_新增.Name = "btn新增資料_新增";
-            this.btn新增資料_新增.Size = new System.Drawing.Size(88, 46);
-            this.btn新增資料_新增.TabIndex = 0;
-            this.btn新增資料_新增.Text = "新增";
-            this.btn新增資料_新增.UseVisualStyleBackColor = true;
-            this.btn新增資料_新增.Click += new System.EventHandler(this.btn新增資料_新增_Click);
-            // 
             // btn新增資料_儲存
             // 
             this.btn新增資料_儲存.Location = new System.Drawing.Point(131, 29);
@@ -571,6 +572,16 @@ namespace WindowsFormsApp3
             this.btn新增資料_儲存.Text = "儲存";
             this.btn新增資料_儲存.UseVisualStyleBackColor = true;
             this.btn新增資料_儲存.Click += new System.EventHandler(this.btn新增資料_儲存_Click);
+            // 
+            // btn新增資料_新增
+            // 
+            this.btn新增資料_新增.Location = new System.Drawing.Point(18, 29);
+            this.btn新增資料_新增.Name = "btn新增資料_新增";
+            this.btn新增資料_新增.Size = new System.Drawing.Size(88, 46);
+            this.btn新增資料_新增.TabIndex = 0;
+            this.btn新增資料_新增.Text = "新增";
+            this.btn新增資料_新增.UseVisualStyleBackColor = true;
+            this.btn新增資料_新增.Click += new System.EventHandler(this.btn新增資料_新增_Click);
             // 
             // lbl第X筆共X筆
             // 
@@ -582,12 +593,119 @@ namespace WindowsFormsApp3
             this.lbl第X筆共X筆.TabIndex = 26;
             this.lbl第X筆共X筆.Text = "第X筆/共X筆";
             // 
+            // lbox姓名
+            // 
+            this.lbox姓名.DataSource = this.personsBindingSource;
+            this.lbox姓名.DisplayMember = "姓名";
+            this.lbox姓名.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbox姓名.FormattingEnabled = true;
+            this.lbox姓名.ItemHeight = 24;
+            this.lbox姓名.Location = new System.Drawing.Point(486, 52);
+            this.lbox姓名.Name = "lbox姓名";
+            this.lbox姓名.Size = new System.Drawing.Size(201, 148);
+            this.lbox姓名.TabIndex = 27;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.personsBindingSource;
+            this.comboBox1.DisplayMember = "Email";
+            this.comboBox1.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(486, 216);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(257, 32);
+            this.comboBox1.TabIndex = 28;
+            // 
+            // 搜尋功能
+            // 
+            this.搜尋功能.BackColor = System.Drawing.Color.Coral;
+            this.搜尋功能.Controls.Add(this.btnFilter);
+            this.搜尋功能.Controls.Add(this.btnFind);
+            this.搜尋功能.Controls.Add(this.cboxFilter欄位);
+            this.搜尋功能.Controls.Add(this.cboxFind欄位);
+            this.搜尋功能.Controls.Add(this.txtFilter搜尋關鍵字);
+            this.搜尋功能.Controls.Add(this.txtFind搜尋關鍵字);
+            this.搜尋功能.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.搜尋功能.Location = new System.Drawing.Point(487, 277);
+            this.搜尋功能.Name = "搜尋功能";
+            this.搜尋功能.Size = new System.Drawing.Size(455, 174);
+            this.搜尋功能.TabIndex = 29;
+            this.搜尋功能.TabStop = false;
+            this.搜尋功能.Text = "搜尋功能";
+            // 
+            // txtFind搜尋關鍵字
+            // 
+            this.txtFind搜尋關鍵字.Location = new System.Drawing.Point(6, 45);
+            this.txtFind搜尋關鍵字.Name = "txtFind搜尋關鍵字";
+            this.txtFind搜尋關鍵字.Size = new System.Drawing.Size(213, 35);
+            this.txtFind搜尋關鍵字.TabIndex = 0;
+            // 
+            // txtFilter搜尋關鍵字
+            // 
+            this.txtFilter搜尋關鍵字.Location = new System.Drawing.Point(6, 106);
+            this.txtFilter搜尋關鍵字.Name = "txtFilter搜尋關鍵字";
+            this.txtFilter搜尋關鍵字.Size = new System.Drawing.Size(213, 35);
+            this.txtFilter搜尋關鍵字.TabIndex = 1;
+            // 
+            // cboxFind欄位
+            // 
+            this.cboxFind欄位.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cboxFind欄位.FormattingEnabled = true;
+            this.cboxFind欄位.Location = new System.Drawing.Point(231, 45);
+            this.cboxFind欄位.Name = "cboxFind欄位";
+            this.cboxFind欄位.Size = new System.Drawing.Size(104, 34);
+            this.cboxFind欄位.TabIndex = 30;
+            // 
+            // cboxFilter欄位
+            // 
+            this.cboxFilter欄位.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cboxFilter欄位.FormattingEnabled = true;
+            this.cboxFilter欄位.Location = new System.Drawing.Point(231, 105);
+            this.cboxFilter欄位.Name = "cboxFilter欄位";
+            this.cboxFilter欄位.Size = new System.Drawing.Size(104, 34);
+            this.cboxFilter欄位.TabIndex = 31;
+            // 
+            // btnFind
+            // 
+            this.btnFind.Location = new System.Drawing.Point(348, 45);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(95, 35);
+            this.btnFind.TabIndex = 32;
+            this.btnFind.Text = "Find";
+            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.Location = new System.Drawing.Point(348, 106);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(95, 35);
+            this.btnFilter.TabIndex = 33;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            // 
+            // btn移除Filter條件
+            // 
+            this.btn移除Filter條件.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn移除Filter條件.Location = new System.Drawing.Point(835, 468);
+            this.btn移除Filter條件.Name = "btn移除Filter條件";
+            this.btn移除Filter條件.Size = new System.Drawing.Size(107, 75);
+            this.btn移除Filter條件.TabIndex = 30;
+            this.btn移除Filter條件.Text = "移除Filter條件";
+            this.btn移除Filter條件.UseVisualStyleBackColor = true;
+            this.btn移除Filter條件.Click += new System.EventHandler(this.btn移除Filter條件_Click);
+            // 
             // chk已婚
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(781, 668);
+            this.ClientSize = new System.Drawing.Size(966, 668);
+            this.Controls.Add(this.btn移除Filter條件);
+            this.Controls.Add(this.搜尋功能);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.lbox姓名);
             this.Controls.Add(this.lbl第X筆共X筆);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn刪除);
@@ -625,6 +743,8 @@ namespace WindowsFormsApp3
             this.personsBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personsDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.搜尋功能.ResumeLayout(false);
+            this.搜尋功能.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -685,6 +805,16 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button btn新增資料_儲存;
         private System.Windows.Forms.Button btn新增資料_新增;
         private System.Windows.Forms.Label lbl第X筆共X筆;
+        private System.Windows.Forms.ListBox lbox姓名;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.GroupBox 搜尋功能;
+        private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.ComboBox cboxFilter欄位;
+        private System.Windows.Forms.ComboBox cboxFind欄位;
+        private System.Windows.Forms.TextBox txtFilter搜尋關鍵字;
+        private System.Windows.Forms.TextBox txtFind搜尋關鍵字;
+        private System.Windows.Forms.Button btn移除Filter條件;
     }
 }
 
