@@ -36,11 +36,13 @@ namespace 專題.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.txt帳號 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.chk員工登入 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chk員工登入);
             this.groupBox1.Controls.Add(this.btn清除);
             this.groupBox1.Controls.Add(this.btn登入);
             this.groupBox1.Controls.Add(this.txt密碼);
@@ -48,7 +50,7 @@ namespace 專題.Forms
             this.groupBox1.Controls.Add(this.txt帳號);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox1.Location = new System.Drawing.Point(47, 36);
+            this.groupBox1.Location = new System.Drawing.Point(183, 37);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(396, 457);
             this.groupBox1.TabIndex = 0;
@@ -108,12 +110,22 @@ namespace 專題.Forms
             this.label1.TabIndex = 0;
             this.label1.Text = "帳號:";
             // 
+            // chk員工登入
+            // 
+            this.chk員工登入.AutoSize = true;
+            this.chk員工登入.Location = new System.Drawing.Point(153, 255);
+            this.chk員工登入.Name = "chk員工登入";
+            this.chk員工登入.Size = new System.Drawing.Size(115, 30);
+            this.chk員工登入.TabIndex = 10;
+            this.chk員工登入.Text = "員工登入";
+            this.chk員工登入.UseVisualStyleBackColor = true;
+            // 
             // 登入系統
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Plum;
-            this.ClientSize = new System.Drawing.Size(494, 517);
+            this.ClientSize = new System.Drawing.Size(681, 517);
             this.Controls.Add(this.groupBox1);
             this.Name = "登入系統";
             this.Text = "登入系統";
@@ -133,5 +145,6 @@ namespace 專題.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt帳號;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox chk員工登入;
     }
 }

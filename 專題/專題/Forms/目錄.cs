@@ -7,24 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace 專題.Forms
 {
     public partial class 目錄 : Form
     {
-        List<string> listapplephone = new List<string>();
-        List<string> listsamsungphone = new List<string>();
-        List<int> listappleprice = new List<int>();
-        List<int> listsamsungprice = new List<int>();
+        SqlConnectionStringBuilder scsb;
+        string myDBConnectionString = "";
+        List<string> list品項名稱 = new List<string>();
+        List<int> list品項價格 = new List<int>();        
         List<string> list顏色 = new List<string>();
         List<string> list容量 = new List<string>();
-
-        int number = 0;
-        int price = 0;
-        string oders = "";
-        string color = "";
-        string capacity = "";
-        int total = 0;
+        List<int> list容量價格 = new List<int>();
+        int 數量 = 0;
+        int 單價 = 0;
+        int 單價容量 = 0;
+        string 訂購品項 = "";
+        string 顏色 = "";
+        string 容量 = "";
+        int 容量價格 = 0;
+        int 總價 = 0;
 
         public 目錄()
         {
@@ -33,144 +36,107 @@ namespace 專題.Forms
 
         private void 目錄_Load(object sender, EventArgs e)
         {
-            listapplephone.Add("iPhone 13 Pro Max");
-            listapplephone.Add("iPhone 13 Pro");
-            listapplephone.Add("iPhone 13");
-            listapplephone.Add("iPhone 13 mini");
-            listapplephone.Add("iPhone SE");
-            listapplephone.Add("iPhone 12");
-            listapplephone.Add("iPhone 12 mini");
-            listapplephone.Add("iPhone 11");
-
-            listappleprice.Add(36900);
-            listappleprice.Add(32900);
-            listappleprice.Add(25900);
-            listappleprice.Add(22900);
-            listappleprice.Add(13900);
-            listappleprice.Add(22900);
-            listappleprice.Add(19900);
-            listappleprice.Add(16500);
-            
-            foreach (string item in listapplephone)
+            scsb = new SqlConnectionStringBuilder();
+            scsb.DataSource = @".";
+            scsb.InitialCatalog = "會員db";
+            scsb.IntegratedSecurity = true;
+            myDBConnectionString = scsb.ToString();
+            //lbox手機型號
+            lbox手機型號.Items.Clear();
+            string strSQL = "select * from 手機產品;";            
+            SqlConnection con = new SqlConnection(myDBConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand(strSQL, con);            
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
             {
-                lbox蘋果手機.Items.Add(item);
-            }
-
-            listsamsungphone.Add("Galaxy S22 Ultra");
-            listsamsungphone.Add("Galaxy S22+");
-            listsamsungphone.Add("Galaxy S22");
-            listsamsungphone.Add("Galaxy Note 20 Ultra");
-            listsamsungphone.Add("Galaxy Note 20");
-            listsamsungphone.Add("Galaxy S21 Ultra");
-            listsamsungphone.Add("Galaxy S21+");
-            listsamsungphone.Add("Galaxy S21");
-
-            listsamsungprice.Add(38900);
-            listsamsungprice.Add(29900);
-            listsamsungprice.Add(24900);
-            listsamsungprice.Add(43900);
-            listsamsungprice.Add(35900);
-            listsamsungprice.Add(35900);
-            listsamsungprice.Add(32900);
-            listsamsungprice.Add(27900);
-
-            foreach (string item in listsamsungphone)
+                lbox手機型號.Items.Add(string.Format("型號:{0}",reader["手機產品"]));
+                list品項名稱.Add(string.Format("型號:{0}", reader["手機產品"]));
+                list品項價格.Add(Convert.ToInt32(reader["最小容量價格"]));
+            }           
+            reader.Close();
+            con.Close();
+            //cbox顏色
+            cbox顏色.Items.Clear();
+            string strSQL1 = "select * from 手機顏色";
+            SqlConnection con1 = new SqlConnection(myDBConnectionString);
+            con1.Open();
+            SqlCommand cmd1 = new SqlCommand(strSQL1, con1);
+            SqlDataReader reader1 = cmd1.ExecuteReader();
+            while (reader1.Read())
             {
-                lbox三星手機.Items.Add(item);
+                cbox顏色.Items.Add(string.Format("{0}", reader1["顏色"]));
+                list顏色.Add(string.Format("{0}", reader1["顏色"]));
             }
-
-            number = 1;
-            txt數量.Text = number.ToString();
-
-            list顏色.Add("金色");
-            list顏色.Add("黑色");
-            list顏色.Add("白色");
-            list顏色.Add("紅色");
-            list顏色.Add("藍色");
-            list顏色.Add("綠色");
-
-            list容量.Add("128G");
-            list容量.Add("256G");
-            list容量.Add("512G");
-            list容量.Add("1TB");
-
-            foreach (string item in list顏色)
+            reader1.Close();
+            con1.Close();
+            //cbox容量
+            cbox容量.Items.Clear();
+            string strSQL2 = "select * from 手機容量";
+            SqlConnection con2 = new SqlConnection(myDBConnectionString);
+            con2.Open();            
+            SqlCommand cmd2= new SqlCommand(strSQL2, con2);
+            SqlDataReader reader2 = cmd2.ExecuteReader();            
+            while (reader2.Read())
             {
-                cbox顏色.Items.Add(item);
+                cbox容量.Items.Add(string.Format("{0}", reader2["容量"]));
+                list容量.Add(string.Format("{0}", reader2["容量"]));
+                list容量價格.Add(Convert.ToInt32(reader2["價格"]));
             }
-            foreach (string item in list容量)
-            {
-                cbox容量.Items.Add(item);
-            }
+            reader2.Close();
+            con2.Close();
+
+            數量 = 1;
+            txt數量.Text = 數量.ToString();
             cbox顏色.SelectedIndex = 0;
-            cbox容量.SelectedIndex = 0;           
+            cbox容量.SelectedIndex = 0;
         }
 
-        private void lbox蘋果手機_Click(object sender, EventArgs e)
+        private void lbox手機型號_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lbox三星手機.SelectedIndex = -1;
-        }
-
-        private void lbox三星手機_Click(object sender, EventArgs e)
-        {
-            lbox蘋果手機.SelectedIndex = -1;
-        }
-
-        private void lbox蘋果手機_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int selIndex = lbox蘋果手機.SelectedIndex;
-            if (selIndex >= 0)
+            int selIndex = lbox手機型號.SelectedIndex;
+            if (lbox手機型號.SelectedIndex >= 0)
             {
-                oders = listapplephone[selIndex];
-                price = listappleprice[selIndex];
+                訂購品項 = list品項名稱[selIndex];
+                單價 = list品項價格[selIndex];
             }
-            else
-            {
-                lbox蘋果手機.SelectedIndex = -1;
-            }
-            lbl單價.Text = price.ToString() + "元";
-            total = price * number;
-            lbl總價.Text = total.ToString() + "元";
-            txt數量.Text = "1";            
-        }
-
-        private void lbox三星手機_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int selIndex = lbox三星手機.SelectedIndex;
-            if (selIndex >= 0)
-            {
-                oders = listsamsungphone[selIndex];
-                price = listsamsungprice[selIndex];
-            }
-            else
-            {
-                lbox三星手機.SelectedIndex = -1;
-            }
-            lbl單價.Text = price.ToString() + "元";
-            total = price * number;
-            lbl總價.Text = total.ToString() + "元";
-            txt數量.Text = "1";            
+            //單價
+            lbl單價.Text = 單價.ToString() + "元";
+            總價 = 數量 * 單價;
+            lbl總價.Text = 總價.ToString() + "元";
+            //單價+容量
+            單價容量 = 單價 + 容量價格;
+            lbl單價.Text = 單價容量.ToString() + "元";
+            總價 = 數量 * 單價容量;
+            lbl總價.Text = 總價.ToString() + "元";
+            //選擇其他品項重製
+            txt數量.Text = "1";
         }
 
         private void cbox顏色_SelectedIndexChanged(object sender, EventArgs e)
         {
             int selIndex = cbox顏色.SelectedIndex;
-            color = list顏色[selIndex];
+            顏色 = list顏色[selIndex];
         }
 
         private void cbox容量_SelectedIndexChanged(object sender, EventArgs e)
         {
             int selIndex = cbox容量.SelectedIndex;
-            capacity = list容量[selIndex];
+            容量 = list容量[selIndex];
+            容量價格 = list容量價格[selIndex];
+            單價容量 = 單價 + 容量價格;
+            lbl單價.Text = 單價容量.ToString() + "元";
+            總價 = 數量 * 單價容量;
+            lbl總價.Text = 總價.ToString() + "元";
         }
 
         private void txt數量_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                number = Convert.ToInt32(txt數量.Text);
-                total = number * price;
-                lbl總價.Text = total.ToString() + "元";
+                數量 = Convert.ToInt32(txt數量.Text);
+                總價 = 數量 * 單價容量;
+                lbl總價.Text = 總價.ToString() + "元";
             }
             catch
             {
@@ -186,33 +152,21 @@ namespace 專題.Forms
             }
         }
 
-        private void btn清除_Click(object sender, EventArgs e)
-        {
-            cbox顏色.Text = "";
-            cbox容量.Text = "";
-            txt數量.Text = "1";
-            lbl單價.Text = "0元";
-            lbl總價.Text = "0元";
-            price = 0;
-            total = 0;
-            lbox蘋果手機.SelectedIndex = -1;
-            lbox三星手機.SelectedIndex = -1;
-        }
-
         private void btn加入購物車_Click(object sender, EventArgs e)
         {
-            if (lbox蘋果手機.SelectedIndex >= 0 || lbox三星手機.SelectedIndex >= 0)
+            if (lbox手機型號.SelectedIndex >= 0)
             {
                 if (cbox顏色.SelectedIndex >= 0 && cbox容量.SelectedIndex >= 0)
                 {
-                    phone a = new phone();
-                    a.oders = oders;
-                    a.price = price;
-                    a.number = number;
-                    a.color = color;
-                    a.capacity = capacity;
-                    a.total = total;                    
-                    Globalvar.list訂購品項列表.Add(a);
+                    phone 購物車 = new phone();
+                    購物車.訂購品項 = 訂購品項;
+                    購物車.單價 = 單價;
+                    購物車.數量 = 數量;
+                    購物車.顏色 = 顏色;
+                    購物車.容量 = 容量;
+                    購物車.容量價格 = 容量價格;
+                    購物車.總價 = 總價;
+                    Globalvar.list訂購品項列表.Add(購物車);
                     MessageBox.Show("已加入結帳單");
                 }
                 else
@@ -222,10 +176,22 @@ namespace 專題.Forms
             }
             else
             {
-                MessageBox.Show("請選擇手機品項");
+                MessageBox.Show("請選擇品項");
             }
         }
 
-        
+        private void btn清除_Click(object sender, EventArgs e)
+        {
+            lbox手機型號.ClearSelected();
+            cbox顏色.Text = "";
+            cbox容量.Text = "";
+            txt數量.Text = "1";
+            單價 = 0;
+            總價 = 0;
+            單價容量 = 0;
+            容量價格 = 0;
+            lbl單價.Text = "0元";
+            lbl總價.Text = "0元";
+        }
     }
 }

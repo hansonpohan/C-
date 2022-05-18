@@ -31,7 +31,6 @@ namespace 專題.Forms
         {
             this.btn修改訂單 = new System.Windows.Forms.Button();
             this.btn結帳 = new System.Windows.Forms.Button();
-            this.btn刪除訂單 = new System.Windows.Forms.Button();
             this.btn儲存訂單 = new System.Windows.Forms.Button();
             this.btn清除所有品項 = new System.Windows.Forms.Button();
             this.btn移除所選品項 = new System.Windows.Forms.Button();
@@ -44,9 +43,9 @@ namespace 專題.Forms
             // btn修改訂單
             // 
             this.btn修改訂單.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn修改訂單.Location = new System.Drawing.Point(442, 546);
+            this.btn修改訂單.Location = new System.Drawing.Point(627, 487);
             this.btn修改訂單.Name = "btn修改訂單";
-            this.btn修改訂單.Size = new System.Drawing.Size(149, 43);
+            this.btn修改訂單.Size = new System.Drawing.Size(149, 51);
             this.btn修改訂單.TabIndex = 21;
             this.btn修改訂單.Text = "修改訂單";
             this.btn修改訂單.UseVisualStyleBackColor = true;
@@ -55,7 +54,7 @@ namespace 專題.Forms
             // btn結帳
             // 
             this.btn結帳.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn結帳.Location = new System.Drawing.Point(627, 546);
+            this.btn結帳.Location = new System.Drawing.Point(544, 564);
             this.btn結帳.Name = "btn結帳";
             this.btn結帳.Size = new System.Drawing.Size(149, 43);
             this.btn結帳.TabIndex = 19;
@@ -63,21 +62,10 @@ namespace 專題.Forms
             this.btn結帳.UseVisualStyleBackColor = true;
             this.btn結帳.Click += new System.EventHandler(this.btn結帳_Click);
             // 
-            // btn刪除訂單
-            // 
-            this.btn刪除訂單.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn刪除訂單.Location = new System.Drawing.Point(627, 471);
-            this.btn刪除訂單.Name = "btn刪除訂單";
-            this.btn刪除訂單.Size = new System.Drawing.Size(149, 50);
-            this.btn刪除訂單.TabIndex = 18;
-            this.btn刪除訂單.Text = "刪除訂單";
-            this.btn刪除訂單.UseVisualStyleBackColor = true;
-            this.btn刪除訂單.Click += new System.EventHandler(this.btn刪除訂單_Click);
-            // 
             // btn儲存訂單
             // 
             this.btn儲存訂單.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn儲存訂單.Location = new System.Drawing.Point(442, 471);
+            this.btn儲存訂單.Location = new System.Drawing.Point(461, 488);
             this.btn儲存訂單.Name = "btn儲存訂單";
             this.btn儲存訂單.Size = new System.Drawing.Size(149, 50);
             this.btn儲存訂單.TabIndex = 17;
@@ -88,7 +76,7 @@ namespace 專題.Forms
             // btn清除所有品項
             // 
             this.btn清除所有品項.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn清除所有品項.Location = new System.Drawing.Point(237, 470);
+            this.btn清除所有品項.Location = new System.Drawing.Point(194, 470);
             this.btn清除所有品項.Name = "btn清除所有品項";
             this.btn清除所有品項.Size = new System.Drawing.Size(149, 51);
             this.btn清除所有品項.TabIndex = 16;
@@ -99,7 +87,7 @@ namespace 專題.Forms
             // btn移除所選品項
             // 
             this.btn移除所選品項.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn移除所選品項.Location = new System.Drawing.Point(69, 470);
+            this.btn移除所選品項.Location = new System.Drawing.Point(26, 470);
             this.btn移除所選品項.Name = "btn移除所選品項";
             this.btn移除所選品項.Size = new System.Drawing.Size(149, 51);
             this.btn移除所選品項.TabIndex = 15;
@@ -122,7 +110,7 @@ namespace 專題.Forms
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.LightGreen;
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(334, 9);
+            this.label2.Location = new System.Drawing.Point(336, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(177, 35);
             this.label2.TabIndex = 13;
@@ -130,12 +118,12 @@ namespace 專題.Forms
             // 
             // lbox訂購品項列表
             // 
-            this.lbox訂購品項列表.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbox訂購品項列表.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lbox訂購品項列表.FormattingEnabled = true;
-            this.lbox訂購品項列表.ItemHeight = 24;
-            this.lbox訂購品項列表.Location = new System.Drawing.Point(71, 147);
+            this.lbox訂購品項列表.ItemHeight = 21;
+            this.lbox訂購品項列表.Location = new System.Drawing.Point(26, 147);
             this.lbox訂購品項列表.Name = "lbox訂購品項列表";
-            this.lbox訂購品項列表.Size = new System.Drawing.Size(705, 268);
+            this.lbox訂購品項列表.Size = new System.Drawing.Size(750, 256);
             this.lbox訂購品項列表.TabIndex = 11;
             this.lbox訂購品項列表.SelectedIndexChanged += new System.EventHandler(this.lbox訂購品項列表_SelectedIndexChanged);
             // 
@@ -157,7 +145,6 @@ namespace 專題.Forms
             this.ClientSize = new System.Drawing.Size(801, 639);
             this.Controls.Add(this.btn修改訂單);
             this.Controls.Add(this.btn結帳);
-            this.Controls.Add(this.btn刪除訂單);
             this.Controls.Add(this.btn儲存訂單);
             this.Controls.Add(this.btn清除所有品項);
             this.Controls.Add(this.btn移除所選品項);
@@ -177,7 +164,6 @@ namespace 專題.Forms
 
         private System.Windows.Forms.Button btn修改訂單;
         private System.Windows.Forms.Button btn結帳;
-        private System.Windows.Forms.Button btn刪除訂單;
         private System.Windows.Forms.Button btn儲存訂單;
         private System.Windows.Forms.Button btn清除所有品項;
         private System.Windows.Forms.Button btn移除所選品項;

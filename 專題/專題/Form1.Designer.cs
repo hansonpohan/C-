@@ -36,8 +36,11 @@ namespace 專題
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbltitle = new System.Windows.Forms.Label();
             this.存放form = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.存放form.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -94,14 +97,14 @@ namespace 專題
             this.panel3.Controls.Add(this.lbltitle);
             this.panel3.Location = new System.Drawing.Point(183, 1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(868, 100);
+            this.panel3.Size = new System.Drawing.Size(802, 100);
             this.panel3.TabIndex = 1;
             // 
             // lbltitle
             // 
             this.lbltitle.AutoSize = true;
             this.lbltitle.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lbltitle.Location = new System.Drawing.Point(372, 27);
+            this.lbltitle.Location = new System.Drawing.Point(325, 24);
             this.lbltitle.Name = "lbltitle";
             this.lbltitle.Size = new System.Drawing.Size(94, 35);
             this.lbltitle.TabIndex = 0;
@@ -109,16 +112,26 @@ namespace 專題
             // 
             // 存放form
             // 
+            this.存放form.Controls.Add(this.pictureBox1);
             this.存放form.Location = new System.Drawing.Point(183, 101);
             this.存放form.Name = "存放form";
             this.存放form.Size = new System.Drawing.Size(868, 542);
             this.存放form.TabIndex = 2;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::專題.Properties.Resources.手機陳列;
+            this.pictureBox1.Location = new System.Drawing.Point(0, -64);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(802, 800);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1049, 642);
+            this.ClientSize = new System.Drawing.Size(982, 642);
             this.Controls.Add(this.存放form);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -128,6 +141,8 @@ namespace 專題
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.存放form.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -137,10 +152,11 @@ namespace 專題
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn註冊帳號;
         private System.Windows.Forms.Button btn登入系統;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel 存放form;
         private System.Windows.Forms.Label lbltitle;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

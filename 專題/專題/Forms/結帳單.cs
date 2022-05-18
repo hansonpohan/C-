@@ -12,26 +12,27 @@ namespace 專題.Forms
 {
     public partial class 結帳單 : Form
     {
-        int intprice = 0;
+        int int總價 = 0;
         public 結帳單()
         {
             InitializeComponent();
         }
 
         private void 結帳單_Load(object sender, EventArgs e)
-        {            
-            foreach (phone a in Globalvar.list訂購品項列表)
+        {
+            lbl會員名稱.Text = "會員名稱:  " + Globalvar.會員名稱;
+            foreach (phone 購物車 in Globalvar.list訂購品項列表)
             {
-                string orders = a.oders;
-                int price = a.price;
-                int number = a.number;
-                string color = a.color;
-                string capacity = a.capacity;
-                int total = a.total;
-
-                string str商品資訊 = string.Format("手機型號:{0},單價:{1}元,數量:{2}支,{3},{4},總價:{5}元",orders,price,number,color,capacity,total);
-                lbox訂購品項列表.Items.Add(str商品資訊);
-                計算訂單總價();
+                string 訂購品項 = 購物車.訂購品項;
+                int 單價 = 購物車.單價;
+                int 數量 = 購物車.數量;
+                string 顏色 = 購物車.顏色;
+                string 容量 = 購物車.容量;
+                int 容量價格 = 購物車.容量價格;
+                int 總價 = 購物車.總價;
+                string str訂單 = string.Format("{0},單價:{1}元,{2}支,顏色:{3},容量:{4},容量價格:{5},總價:{6}元", 訂購品項, 單價, 數量, 顏色, 容量, 容量價格, 總價);
+                lbox訂購品項列表.Items.Add(str訂單);
+                計算總價();
             }
         }
 
@@ -52,36 +53,27 @@ namespace 專題.Forms
             {
                 MessageBox.Show("請選擇品項");
             }
-            計算訂單總價();
+            計算總價();
         }
 
         private void btn清除所有品項_Click(object sender, EventArgs e)
         {
             lbox訂購品項列表.Items.Clear();
-            Globalvar.list訂購品項列表.Clear();            
-            計算訂單總價();
+            Globalvar.list訂購品項列表.Clear();
+            計算總價();
         }
 
-        void 計算訂單總價()
-        {                       
-            if (lbl訂單總價.Text != "")
+        void 計算總價()
+        {
+            int總價 = 0;
+            foreach (phone 購物車 in Globalvar.list訂購品項列表)
             {
-                //每觸發事件要清空一次int總價
-                intprice = 0;
-                foreach (phone a in Globalvar.list訂購品項列表)
-                {
-                    intprice += a.total;
-                }
+                int總價 += 購物車.總價;
             }
-            lbl訂單總價.Text = "訂單總價:" + intprice.ToString() + "元";
+            lbl訂單總價.Text = "總價:" + int總價.ToString() + "元";
         }
 
         private void btn儲存訂單_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn刪除訂單_Click(object sender, EventArgs e)
         {
 
         }
@@ -93,7 +85,7 @@ namespace 專題.Forms
 
         private void btn結帳_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("您已成功下單");
+            MessageBox.Show("請選擇付款方式");
         }
     }
 }

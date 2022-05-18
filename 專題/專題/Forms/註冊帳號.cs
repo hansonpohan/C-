@@ -7,53 +7,55 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace 專題.Forms
 {
     public partial class 註冊帳號 : Form
     {
+        SqlConnectionStringBuilder scsb;
+        string myDBConnectionString = "";
         public 註冊帳號()
         {
             InitializeComponent();
         }
 
-        private void 會員BindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.會員BindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.mydbDataSet2);
-
-        }
-
         private void 註冊帳號_Load(object sender, EventArgs e)
         {
-
+            scsb = new SqlConnectionStringBuilder();
+            scsb.DataSource = @".";
+            scsb.InitialCatalog = "會員db";
+            scsb.IntegratedSecurity = true;
+            myDBConnectionString = scsb.ToString();
         }
 
-        private void btn新增_Click(object sender, EventArgs e)
-        {
-            會員BindingSource.AddNew();
-            dtp生日.Value = new DateTime(1900, 1, 1, 0, 0, 0);
-        }
 
         private void btn儲存_Click(object sender, EventArgs e)
         {
-            DialogResult R = MessageBox.Show("您確認要儲存?", "儲存確認", MessageBoxButtons.YesNo);
-
-            if (R == DialogResult.Yes)
-            { //yes 儲存
-                //未來工作時, 要做欄位檢查
-                Validate();
-                會員BindingSource.EndEdit();
-                會員TableAdapter.Update(mydbDataSet2.會員);
-               
-                MessageBox.Show("資料儲存成功");
-
+            if ((txt帳號.Text != "") && (txt密碼.Text != "") && (txt姓名.Text != ""))
+            {
+                SqlConnection con = new SqlConnection(myDBConnectionString);
+                con.Open();
+                string strSQL = "insert into 會員 values(@NewCount,@NewPass,@NewName, @NewPhone,@NewAddress,@NewEmail,@NewBirthday,@employee);";
+                SqlCommand cmd = new SqlCommand(strSQL, con);
+                cmd.Parameters.AddWithValue("@NewCount", txt帳號.Text);
+                cmd.Parameters.AddWithValue("@NewPass", txt密碼.Text);
+                cmd.Parameters.AddWithValue("@NewName", txt姓名.Text);
+                cmd.Parameters.AddWithValue("@NewPhone", txt電話.Text);
+                cmd.Parameters.AddWithValue("@NewAddress", txt地址.Text);
+                cmd.Parameters.AddWithValue("@NewEmail", txtEmail.Text);
+                cmd.Parameters.AddWithValue("@NewBirthday", dtp生日.Value);
+                cmd.Parameters.AddWithValue("@employee", chk員工註冊.Checked);
+                
+                int rows = cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show($"{rows} 筆資料新增成功");
             }
             else
-            { // no
-
+            {
+                MessageBox.Show(" 帳號, 密碼, 姓名必需填寫");
             }
+            
         }
     }
 }

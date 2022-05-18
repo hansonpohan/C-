@@ -29,7 +29,7 @@ namespace 專題
                 {
                     activeform.Close();
                 }
-                activeform = childform;
+                activeform = childform;            
                 childform.TopLevel = false;
                 childform.FormBorderStyle = FormBorderStyle.None;
                 childform.Dock = DockStyle.Fill;
@@ -48,8 +48,7 @@ namespace 專題
         private void btn註冊帳號_Click(object sender, EventArgs e)
         {
             openchildform(new Forms.註冊帳號(), sender);
-        }
-
+        }      
         
     }
 }

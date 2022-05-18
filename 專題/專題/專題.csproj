@@ -58,6 +58,12 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form3員工登入修改.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3員工登入修改.Designer.cs">
+      <DependentUpon>Form3員工登入修改.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\會員功能.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form3員工登入修改.resx">
+      <DependentUpon>Form3員工登入修改.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\會員功能.resx">
       <DependentUpon>會員功能.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,13 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="mydbDataSet.xsc">
       <DependentUpon>mydbDataSet.xsd</DependentUpon>
     </None>
@@ -174,6 +179,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -182,6 +192,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\手機陳列.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\三星.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20210925001573.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

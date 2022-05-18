@@ -8,11 +8,13 @@ namespace 專題
 {
     class phone
     {
-        public int number = 0;
-        public int price = 0;
-        public string oders = "";
-        public string color = "";
-        public string capacity = "";
-        public int total = 0;
+        public int 數量 = 0;
+        public int 單價 = 0;
+        int 單價容量 = 0;
+        public string 訂購品項 = "";
+        public string 顏色 = "";
+        public string 容量 = "";
+        public int 容量價格 = 0;
+        public int 總價 = 0;        
     }
 }
