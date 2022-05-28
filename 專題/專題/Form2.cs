@@ -56,7 +56,19 @@ namespace 專題
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //Globalvar.form登入.Show();            
+            Globalvar.form登入.Show();            
+        }
+
+        private void btn返回主頁_Click(object sender, EventArgs e)
+        {
+            if (activeform != null)
+                activeform.Close();
+            lbltitle.Text = "Home";
+        }
+
+        private void btn登出_Click(object sender, EventArgs e)
+        {
+            Globalvar.form訂單.Close();
         }
     }
 }

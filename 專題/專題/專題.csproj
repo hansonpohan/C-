@@ -58,11 +58,17 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3員工登入修改.cs">
+    <Compile Include="Form3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3員工登入修改.Designer.cs">
-      <DependentUpon>Form3員工登入修改.cs</DependentUpon>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\員工登入系統.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\員工登入系統.Designer.cs">
+      <DependentUpon>員工登入系統.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\會員功能.cs">
       <SubType>Form</SubType>
@@ -70,11 +76,23 @@
     <Compile Include="Forms\會員功能.Designer.cs">
       <DependentUpon>會員功能.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\登入系統.cs">
+    <Compile Include="Forms\會員資料.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\登入系統.Designer.cs">
-      <DependentUpon>登入系統.cs</DependentUpon>
+    <Compile Include="Forms\會員資料.Designer.cs">
+      <DependentUpon>會員資料.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\產品修改.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\產品修改.Designer.cs">
+      <DependentUpon>產品修改.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\顧客登入系統.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\顧客登入系統.Designer.cs">
+      <DependentUpon>顧客登入系統.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\目錄.cs">
       <SubType>Form</SubType>
@@ -119,14 +137,23 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3員工登入修改.resx">
-      <DependentUpon>Form3員工登入修改.cs</DependentUpon>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\員工登入系統.resx">
+      <DependentUpon>員工登入系統.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\會員功能.resx">
       <DependentUpon>會員功能.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\登入系統.resx">
-      <DependentUpon>登入系統.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\會員資料.resx">
+      <DependentUpon>會員資料.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\產品修改.resx">
+      <DependentUpon>產品修改.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\顧客登入系統.resx">
+      <DependentUpon>顧客登入系統.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\目錄.resx">
       <DependentUpon>目錄.cs</DependentUpon>

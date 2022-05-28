@@ -29,14 +29,13 @@ namespace 專題.Forms
             myDBConnectionString = scsb.ToString();
         }
 
-
         private void btn儲存_Click(object sender, EventArgs e)
         {
             if ((txt帳號.Text != "") && (txt密碼.Text != "") && (txt姓名.Text != ""))
             {
                 SqlConnection con = new SqlConnection(myDBConnectionString);
                 con.Open();
-                string strSQL = "insert into 會員 values(@NewCount,@NewPass,@NewName, @NewPhone,@NewAddress,@NewEmail,@NewBirthday,@employee);";
+                string strSQL = "insert into 會員資料 values(@NewCount,@NewPass,@NewName, @NewPhone,@NewAddress,@NewEmail,@NewBirthday);";
                 SqlCommand cmd = new SqlCommand(strSQL, con);
                 cmd.Parameters.AddWithValue("@NewCount", txt帳號.Text);
                 cmd.Parameters.AddWithValue("@NewPass", txt密碼.Text);
@@ -45,17 +44,43 @@ namespace 專題.Forms
                 cmd.Parameters.AddWithValue("@NewAddress", txt地址.Text);
                 cmd.Parameters.AddWithValue("@NewEmail", txtEmail.Text);
                 cmd.Parameters.AddWithValue("@NewBirthday", dtp生日.Value);
-                cmd.Parameters.AddWithValue("@employee", chk員工註冊.Checked);
                 
                 int rows = cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show($"{rows} 筆資料新增成功");
+                txt帳號.Clear();
+                txt密碼.Clear();
+                txt姓名.Clear();
+                txt電話.Clear();
+                txt地址.Clear();
+                txtEmail.Clear();
+                dtp生日.Value = DateTime.Now;
             }
             else
             {
                 MessageBox.Show(" 帳號, 密碼, 姓名必需填寫");
+            }            
+        }
+
+        private void txt帳號_Leave(object sender, EventArgs e)
+        {
+            if (txt帳號.Text == "")
+            {
+
             }
-            
+            else
+            {
+                SqlConnection con = new SqlConnection(myDBConnectionString);
+                con.Open();
+                string strSQL = "select * from 會員資料 where 帳號 like @Searchcount";
+                SqlCommand cmd = new SqlCommand(strSQL, con);
+                cmd.Parameters.AddWithValue("@Searchcount", "%" + txt帳號.Text + "%");
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    MessageBox.Show("此帳號已被註冊");
+                }
+            }
         }
     }
 }

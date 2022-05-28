@@ -89,7 +89,33 @@ namespace 專題.Forms
             數量 = 1;
             txt數量.Text = 數量.ToString();
             cbox顏色.SelectedIndex = 0;
-            cbox容量.SelectedIndex = 0;
+            cbox容量.SelectedIndex = 0;            
+        }
+
+        void 顯示商品細項資訊()
+        {
+            SqlConnection con = new SqlConnection(myDBConnectionString);
+            con.Open();
+            string strSQL = "select * from 手機產品 where id = @SearchID";
+            SqlCommand cmd = new SqlCommand(strSQL, con);
+            cmd.Parameters.AddWithValue(@"SearchID", lbox手機型號.SelectedIndex+1);
+            SqlDataReader reader = cmd.ExecuteReader();
+            string image_dir = @"images\";
+            string image_name = "";
+            int i = 0;
+            while (reader.Read())
+            {
+                image_name = reader["pimage"].ToString();
+                pictureBox1.Image = Image.FromFile(image_dir + image_name);
+                i += 1;
+            }
+            reader.Close();
+            con.Close();
+        }
+
+        private void lbox手機型號_Click(object sender, EventArgs e)
+        {
+            顯示商品細項資訊();
         }
 
         private void lbox手機型號_SelectedIndexChanged(object sender, EventArgs e)
@@ -98,7 +124,7 @@ namespace 專題.Forms
             if (lbox手機型號.SelectedIndex >= 0)
             {
                 訂購品項 = list品項名稱[selIndex];
-                單價 = list品項價格[selIndex];
+                單價 = list品項價格[selIndex];                
             }
             //單價
             lbl單價.Text = 單價.ToString() + "元";
@@ -192,6 +218,8 @@ namespace 專題.Forms
             容量價格 = 0;
             lbl單價.Text = "0元";
             lbl總價.Text = "0元";
+            pictureBox1.Image = null;
         }
+
     }
 }

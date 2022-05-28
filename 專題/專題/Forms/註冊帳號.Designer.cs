@@ -39,8 +39,6 @@ namespace 專題.Forms
             this.mydbDataSet2 = new 專題.mydbDataSet2();
             this.btn儲存 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblID = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.dtp生日 = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -61,7 +59,6 @@ namespace 專題.Forms
             this.地址DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.生日DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chk員工註冊 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.會員BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mydbDataSet2)).BeginInit();
@@ -70,7 +67,6 @@ namespace 專題.Forms
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.chk員工註冊);
             this.groupBox1.Controls.Add(this.txt密碼);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txt帳號);
@@ -106,6 +102,7 @@ namespace 專題.Forms
             this.txt帳號.Name = "txt帳號";
             this.txt帳號.Size = new System.Drawing.Size(204, 33);
             this.txt帳號.TabIndex = 1;
+            this.txt帳號.Leave += new System.EventHandler(this.txt帳號_Leave);
             // 
             // label1
             // 
@@ -139,8 +136,6 @@ namespace 專題.Forms
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.lblID);
-            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.dtp生日);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.txtEmail);
@@ -152,33 +147,16 @@ namespace 專題.Forms
             this.groupBox2.Controls.Add(this.txt姓名);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox2.Location = new System.Drawing.Point(355, 37);
+            this.groupBox2.Location = new System.Drawing.Point(343, 37);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(374, 468);
+            this.groupBox2.Size = new System.Drawing.Size(374, 410);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "個人基本資料";
             // 
-            // lblID
-            // 
-            this.lblID.BackColor = System.Drawing.Color.Bisque;
-            this.lblID.Location = new System.Drawing.Point(92, 49);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(174, 26);
-            this.lblID.TabIndex = 11;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 49);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 24);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "ID:";
-            // 
             // dtp生日
             // 
-            this.dtp生日.Location = new System.Drawing.Point(90, 396);
+            this.dtp生日.Location = new System.Drawing.Point(94, 351);
             this.dtp生日.Name = "dtp生日";
             this.dtp生日.Size = new System.Drawing.Size(263, 33);
             this.dtp生日.TabIndex = 9;
@@ -186,7 +164,7 @@ namespace 專題.Forms
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(25, 405);
+            this.label8.Location = new System.Drawing.Point(29, 360);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 24);
             this.label8.TabIndex = 8;
@@ -194,7 +172,7 @@ namespace 專題.Forms
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(90, 323);
+            this.txtEmail.Location = new System.Drawing.Point(94, 278);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(263, 33);
             this.txtEmail.TabIndex = 7;
@@ -202,7 +180,7 @@ namespace 專題.Forms
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(10, 326);
+            this.label7.Location = new System.Drawing.Point(14, 281);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 24);
             this.label7.TabIndex = 6;
@@ -210,7 +188,7 @@ namespace 專題.Forms
             // 
             // txt地址
             // 
-            this.txt地址.Location = new System.Drawing.Point(90, 248);
+            this.txt地址.Location = new System.Drawing.Point(94, 203);
             this.txt地址.Name = "txt地址";
             this.txt地址.Size = new System.Drawing.Size(263, 33);
             this.txt地址.TabIndex = 5;
@@ -218,7 +196,7 @@ namespace 專題.Forms
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 251);
+            this.label4.Location = new System.Drawing.Point(29, 206);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 24);
             this.label4.TabIndex = 4;
@@ -226,7 +204,7 @@ namespace 專題.Forms
             // 
             // txt電話
             // 
-            this.txt電話.Location = new System.Drawing.Point(90, 175);
+            this.txt電話.Location = new System.Drawing.Point(94, 130);
             this.txt電話.Name = "txt電話";
             this.txt電話.Size = new System.Drawing.Size(213, 33);
             this.txt電話.TabIndex = 3;
@@ -234,7 +212,7 @@ namespace 專題.Forms
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 178);
+            this.label5.Location = new System.Drawing.Point(29, 133);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 24);
             this.label5.TabIndex = 2;
@@ -242,7 +220,7 @@ namespace 專題.Forms
             // 
             // txt姓名
             // 
-            this.txt姓名.Location = new System.Drawing.Point(90, 97);
+            this.txt姓名.Location = new System.Drawing.Point(94, 52);
             this.txt姓名.Name = "txt姓名";
             this.txt姓名.Size = new System.Drawing.Size(213, 33);
             this.txt姓名.TabIndex = 1;
@@ -250,7 +228,7 @@ namespace 專題.Forms
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 100);
+            this.label6.Location = new System.Drawing.Point(29, 55);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 24);
             this.label6.TabIndex = 0;
@@ -315,22 +293,12 @@ namespace 專題.Forms
             this.生日DataGridViewTextBoxColumn.HeaderText = "生日";
             this.生日DataGridViewTextBoxColumn.Name = "生日DataGridViewTextBoxColumn";
             // 
-            // chk員工註冊
-            // 
-            this.chk員工註冊.AutoSize = true;
-            this.chk員工註冊.Location = new System.Drawing.Point(105, 180);
-            this.chk員工註冊.Name = "chk員工註冊";
-            this.chk員工註冊.Size = new System.Drawing.Size(105, 28);
-            this.chk員工註冊.TabIndex = 4;
-            this.chk員工註冊.Text = "員工註冊";
-            this.chk員工註冊.UseVisualStyleBackColor = true;
-            // 
             // 註冊帳號
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(741, 542);
+            this.ClientSize = new System.Drawing.Size(741, 492);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn儲存);
@@ -378,8 +346,5 @@ namespace 專題.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn 地址DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 生日DataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox chk員工註冊;
     }
 }

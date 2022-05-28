@@ -7,12 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace 專題.Forms
 {
     public partial class 結帳單 : Form
     {
         int int總價 = 0;
+        SqlConnectionStringBuilder scsb;
+        string myDBConnectionString = "";
+        int count = 0;
+
+
         public 結帳單()
         {
             InitializeComponent();
@@ -20,7 +26,24 @@ namespace 專題.Forms
 
         private void 結帳單_Load(object sender, EventArgs e)
         {
-            lbl會員名稱.Text = "會員名稱:  " + Globalvar.會員名稱;
+            scsb = new SqlConnectionStringBuilder();
+            scsb.DataSource = @".";
+            scsb.InitialCatalog = "會員db";
+            scsb.IntegratedSecurity = true;
+            myDBConnectionString = scsb.ToString();
+
+            SqlConnection con = new SqlConnection(myDBConnectionString);
+            con.Open();
+            string strSQL = "select * from 訂單編號測試";
+            SqlCommand cmd = new SqlCommand(strSQL, con);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while(reader.Read())
+            {
+                count++;
+            }
+            lbl訂單編號.Text = "A" + (count+1);
+
+            lbl會員名稱.Text = Globalvar.會員名稱;
             foreach (phone 購物車 in Globalvar.list訂購品項列表)
             {
                 string 訂購品項 = 購物車.訂購品項;
@@ -34,6 +57,8 @@ namespace 專題.Forms
                 lbox訂購品項列表.Items.Add(str訂單);
                 計算總價();
             }
+            reader.Close();
+            con.Close();
         }
 
         private void lbox訂購品項列表_SelectedIndexChanged(object sender, EventArgs e)
@@ -70,22 +95,71 @@ namespace 專題.Forms
             {
                 int總價 += 購物車.總價;
             }
-            lbl訂單總價.Text = "總價:" + int總價.ToString() + "元";
+            lbl訂單總價.Text = "訂單總價:" + int總價.ToString() + "元";
         }
 
-        private void btn儲存訂單_Click(object sender, EventArgs e)
+        private void btn下單_Click(object sender, EventArgs e)
         {
+            if (lbox訂購品項列表.Items.Count != 0)
+            {
+                DialogResult R = MessageBox.Show("您確認要下單?", "確認下單", MessageBoxButtons.YesNo);
+                if (R == DialogResult.Yes)
+                {
+                    if (count == 0)
+                    {
+                        SqlConnection con = new SqlConnection(myDBConnectionString);
+                        con.Open();
+                        string strSQL = "insert into 訂單編號測試 values(@Newnumber);";
+                        SqlCommand cmd = new SqlCommand(strSQL, con);
+                        cmd.Parameters.AddWithValue("@Newnumber", "A" + Convert.ToString(count + 1));
+                        cmd.ExecuteNonQuery();
+                        lbl訂單編號.Text = "A" + Convert.ToString(count + 1);
+                        con.Close();
+                    }
+                    else
+                    {
+                        SqlConnection con = new SqlConnection(myDBConnectionString);
+                        con.Open();
+                        string strSQL = "insert into 訂單編號測試 values(@Newnumber);";
+                        SqlCommand cmd = new SqlCommand(strSQL, con);
+                        cmd.Parameters.AddWithValue("@Newnumber", "A" + Convert.ToString(count + 1));
+                        cmd.ExecuteNonQuery();
+                        lbl訂單編號.Text = "A" + Convert.ToString(count + 1);
+                        con.Close();
+                        MessageBox.Show("您已成功下單");
+                    }
+                    for (int i = 0; i < lbox訂購品項列表.Items.Count; i += 1)
+                    {
+                        SqlConnection con = new SqlConnection(myDBConnectionString);
+                        con.Open();
+                        string strSQL = "insert into 訂單測試 values (@neworder,@newname,@newitem,@newprice,@newcount,@newcolor,@newcapacity,@newcapacityprice,@newtotal);";
+                        SqlCommand cmd = new SqlCommand(strSQL, con);
+                        cmd.Parameters.AddWithValue("@neworder", lbl訂單編號.Text);
+                        cmd.Parameters.AddWithValue("@newname", Globalvar.會員名稱);
+                        cmd.Parameters.AddWithValue("@newitem", Globalvar.list訂購品項列表[i].訂購品項);
+                        cmd.Parameters.AddWithValue("@newprice", Globalvar.list訂購品項列表[i].單價);
+                        cmd.Parameters.AddWithValue("@newcount", Globalvar.list訂購品項列表[i].數量);
+                        cmd.Parameters.AddWithValue("@newcolor", Globalvar.list訂購品項列表[i].顏色);
+                        cmd.Parameters.AddWithValue("@newcapacity", Globalvar.list訂購品項列表[i].容量);
+                        cmd.Parameters.AddWithValue("@newcapacityprice", Globalvar.list訂購品項列表[i].容量價格);
+                        cmd.Parameters.AddWithValue("@newtotal", Globalvar.list訂購品項列表[i].總價);
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    lbl訂單總價.Text = "訂單總價:";
+                    lbox訂購品項列表.Items.Clear();
+                    Globalvar.list訂購品項列表.Clear();
 
-        }
+                }
+                else
+                {
 
-        private void btn修改訂單_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn結帳_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("請選擇付款方式");
+                }
+            }
+            else
+            {
+                MessageBox.Show("請選擇商品");
+            }
         }
     }
 }

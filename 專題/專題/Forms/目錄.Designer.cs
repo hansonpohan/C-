@@ -29,6 +29,7 @@ namespace 專題.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbox手機型號 = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cbox顏色 = new System.Windows.Forms.ComboBox();
@@ -43,9 +44,8 @@ namespace 專題.Forms
             this.lbl單價 = new System.Windows.Forms.Label();
             this.lbl總價 = new System.Windows.Forms.Label();
             this.btn清除 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,15 +56,16 @@ namespace 專題.Forms
             this.lbox手機型號.ItemHeight = 24;
             this.lbox手機型號.Location = new System.Drawing.Point(12, 29);
             this.lbox手機型號.Name = "lbox手機型號";
-            this.lbox手機型號.Size = new System.Drawing.Size(399, 412);
+            this.lbox手機型號.Size = new System.Drawing.Size(339, 412);
             this.lbox手機型號.TabIndex = 5;
+            this.lbox手機型號.Click += new System.EventHandler(this.lbox手機型號_Click);
             this.lbox手機型號.SelectedIndexChanged += new System.EventHandler(this.lbox手機型號_SelectedIndexChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label6.Location = new System.Drawing.Point(461, 94);
+            this.label6.Location = new System.Drawing.Point(399, 130);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 24);
             this.label6.TabIndex = 10;
@@ -74,7 +75,7 @@ namespace 專題.Forms
             // 
             this.cbox顏色.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbox顏色.FormattingEnabled = true;
-            this.cbox顏色.Location = new System.Drawing.Point(426, 143);
+            this.cbox顏色.Location = new System.Drawing.Point(364, 179);
             this.cbox顏色.Name = "cbox顏色";
             this.cbox顏色.Size = new System.Drawing.Size(121, 29);
             this.cbox顏色.TabIndex = 11;
@@ -84,9 +85,9 @@ namespace 專題.Forms
             // 
             this.cbox容量.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbox容量.FormattingEnabled = true;
-            this.cbox容量.Location = new System.Drawing.Point(426, 310);
+            this.cbox容量.Location = new System.Drawing.Point(364, 310);
             this.cbox容量.Name = "cbox容量";
-            this.cbox容量.Size = new System.Drawing.Size(162, 29);
+            this.cbox容量.Size = new System.Drawing.Size(121, 29);
             this.cbox容量.TabIndex = 13;
             this.cbox容量.SelectedIndexChanged += new System.EventHandler(this.cbox容量_SelectedIndexChanged);
             // 
@@ -94,7 +95,7 @@ namespace 專題.Forms
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label7.Location = new System.Drawing.Point(461, 253);
+            this.label7.Location = new System.Drawing.Point(399, 261);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 24);
             this.label7.TabIndex = 12;
@@ -103,7 +104,7 @@ namespace 專題.Forms
             // btn加入購物車
             // 
             this.btn加入購物車.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn加入購物車.Location = new System.Drawing.Point(307, 546);
+            this.btn加入購物車.Location = new System.Drawing.Point(267, 546);
             this.btn加入購物車.Name = "btn加入購物車";
             this.btn加入購物車.Size = new System.Drawing.Size(140, 45);
             this.btn加入購物車.TabIndex = 15;
@@ -144,7 +145,7 @@ namespace 專題.Forms
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label8.Location = new System.Drawing.Point(258, 458);
+            this.label8.Location = new System.Drawing.Point(218, 458);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 24);
             this.label8.TabIndex = 20;
@@ -154,7 +155,7 @@ namespace 專題.Forms
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label9.Location = new System.Drawing.Point(422, 458);
+            this.label9.Location = new System.Drawing.Point(382, 458);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(48, 24);
             this.label9.TabIndex = 21;
@@ -164,7 +165,7 @@ namespace 專題.Forms
             // 
             this.lbl單價.AutoSize = true;
             this.lbl單價.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lbl單價.Location = new System.Drawing.Point(258, 499);
+            this.lbl單價.Location = new System.Drawing.Point(218, 499);
             this.lbl單價.Name = "lbl單價";
             this.lbl單價.Size = new System.Drawing.Size(107, 24);
             this.lbl單價.TabIndex = 22;
@@ -174,7 +175,7 @@ namespace 專題.Forms
             // 
             this.lbl總價.AutoSize = true;
             this.lbl總價.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lbl總價.Location = new System.Drawing.Point(422, 499);
+            this.lbl總價.Location = new System.Drawing.Point(382, 499);
             this.lbl總價.Name = "lbl總價";
             this.lbl總價.Size = new System.Drawing.Size(120, 24);
             this.lbl總價.TabIndex = 24;
@@ -191,22 +192,17 @@ namespace 專題.Forms
             this.btn清除.UseVisualStyleBackColor = true;
             this.btn清除.Click += new System.EventHandler(this.btn清除_Click);
             // 
-            // pictureBox2
+            // imageList1
             // 
-            this.pictureBox2.Image = global::專題.Properties.Resources.images;
-            this.pictureBox2.Location = new System.Drawing.Point(618, 70);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(242, 207);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 27;
-            this.pictureBox2.TabStop = false;
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(256, 256);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::專題.Properties.Resources.三星;
-            this.pictureBox1.Location = new System.Drawing.Point(618, 327);
+            this.pictureBox1.Location = new System.Drawing.Point(508, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(242, 172);
+            this.pictureBox1.Size = new System.Drawing.Size(298, 496);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
@@ -216,8 +212,7 @@ namespace 專題.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(897, 631);
-            this.Controls.Add(this.pictureBox2);
+            this.ClientSize = new System.Drawing.Size(847, 631);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn清除);
             this.Controls.Add(this.lbl總價);
@@ -234,9 +229,8 @@ namespace 專題.Forms
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lbox手機型號);
             this.Name = "目錄";
-            this.Text = "目錄";
+            this.Text = "X";
             this.Load += new System.EventHandler(this.目錄_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -258,7 +252,7 @@ namespace 專題.Forms
         private System.Windows.Forms.Label lbl單價;
         private System.Windows.Forms.Label lbl總價;
         private System.Windows.Forms.Button btn清除;
+        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
